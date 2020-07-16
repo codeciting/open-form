@@ -1,0 +1,29 @@
+{
+  "name": "open-form",
+  "version": "1.0.0",
+  "repository": "https://github.com/634750802/open-form.git",
+  "author": "Jagger <634750802@qq.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-transform-typescript": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@rollup/plugin-babel": "^5.1.0",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "rollup": "^2.21.0",
+    "typescript": "^3.9.6"
+  },
+  "scripts": {
+    "build": "rm -rf dist && rollup -c && tsc",
+    "dev": "rollup -c -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build"
+  },
+  "files": [
+    "dist"
+  ]
+}
