@@ -79,10 +79,10 @@ export class ModelFormCoordinator<UiConfig, Prototype> extends ModelCoordinator<
   /**
    * Make errors map for validating
    */
-  makeErrorsMap (): Record<keyof Prototype, ConstraintsErrorPayload<keyof Prototype> | null> {
-    const map = {} as Record<keyof Prototype, ConstraintsErrorPayload<keyof Prototype>>
+  makeErrorsMap (): Record<keyof Prototype, ConstraintsErrorPayload<keyof Prototype>[]> {
+    const map = {} as Record<keyof Prototype, ConstraintsErrorPayload<keyof Prototype>[]>
     for (let field of this.model.fields) {
-      map[field.name] = null
+      map[field.name] = []
     }
     return Object.seal(map)
   }
