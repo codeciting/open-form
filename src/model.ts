@@ -46,7 +46,7 @@ abstract class ModelCoordinator<UiConfig, Prototype> {
   }
 }
 
-class ModelFormCoordinator<UiConfig, Prototype> extends ModelCoordinator<UiConfig, Prototype> {
+export class ModelFormCoordinator<UiConfig, Prototype> extends ModelCoordinator<UiConfig, Prototype> {
   constructor (model: Model<UiConfig, Prototype>) {
     super(model)
   }
@@ -76,16 +76,16 @@ class ModelFormCoordinator<UiConfig, Prototype> extends ModelCoordinator<UiConfi
   }
 }
 
-interface ModelFormUiConfig<UiConfig> {
+export interface ModelFormUiConfig<UiConfig> {
   readonly sections: SectionConfig<UiConfig>[]
 }
 
-interface SectionConfig<UiConfig> {
+export interface SectionConfig<UiConfig> {
   readonly ui: UiConfig
   readonly fields: Array<{ name: string } & WritableConfig>
 }
 
-interface Section<UiConfig, Prototype> {
+export interface Section<UiConfig, Prototype> {
   readonly ui: UiConfig
   readonly rows: (Field<UiConfig, any, keyof Prototype> & WritableConfig)[]
 }

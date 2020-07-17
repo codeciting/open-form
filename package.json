@@ -1,6 +1,6 @@
 {
   "name": "@codeciting/open-form",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "repository": "https://github.com/codeciting/open-form.git",
   "author": "Jagger <634750802@qq.com>",
   "license": "MIT",
@@ -26,6 +26,7 @@
   "files": [
     "dist"
   ],
+  "typings": "index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/codeciting"
   }

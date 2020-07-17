@@ -3,6 +3,11 @@
     "@babel/env"
   ],
   "plugins": [
-    "@babel/transform-typescript"
+    [
+      "@babel/transform-typescript",
+      {
+        "importsNotUsedAsValues": "remove"
+      }
+    ]
   ]
 }
