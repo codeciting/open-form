@@ -1,7 +1,7 @@
 {
-  "name": "open-form",
+  "name": "@codeciting/open-form",
   "version": "1.0.0",
-  "repository": "https://github.com/634750802/open-form.git",
+  "repository": "https://github.com/codeciting/open-form.git",
   "author": "Jagger <634750802@qq.com>",
   "license": "MIT",
   "main": "dist/index.js",
@@ -25,5 +25,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/codeciting"
+  }
 }
