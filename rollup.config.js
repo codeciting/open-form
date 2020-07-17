@@ -4,27 +4,6 @@ import babel from '@rollup/plugin-babel'
 import pkg from './package.json'
 
 export default [
-  // browser-friendly UMD build
-  {
-    input: 'src/index.ts',
-    output: {
-      name: 'howLongUntilLunch',
-      file: pkg.browser,
-      format: 'umd'
-    },
-    plugins: [
-      resolve({
-        extensions: ['.mjs', '.js', '.json', '.node', '.ts']
-      }), // so Rollup can find `ms`
-      commonjs(), // so Rollup can convert `ms` to an ES module
-      babel({
-        babelHelpers: 'bundled',
-        exclude: ['node_modules/**'],
-        extensions: ['.ts', '.js', '.jsx', '.es6', '.es', '.mjs']
-      })
-    ]
-  },
-
   // CommonJS (for Node) and ES module (for bundlers) build.
   // (We could have three entries in the configuration array
   // instead of two, but it's quicker to generate multiple

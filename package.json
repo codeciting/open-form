@@ -1,12 +1,11 @@
 {
   "name": "@codeciting/open-form",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "repository": "https://github.com/codeciting/open-form.git",
   "author": "Jagger <634750802@qq.com>",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "browser": "dist/index.umd.js",
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/plugin-transform-typescript": "^7.10.5",

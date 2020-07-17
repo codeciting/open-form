@@ -28,7 +28,7 @@ type ConstraintBuilderConfig<Arguments, DataType> = {
 }
 
 export function createConstraint (type: string, name: string, arg: any): Constraints<any> {
-  name = `${ name }.${ type }`
+  name = `${ type }.${ name }`
   if (!(name in constraintFactories)) {
     throw new Error(`Unknown constraint factory '${ name }'`)
   }
