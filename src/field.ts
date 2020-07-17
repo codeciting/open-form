@@ -46,7 +46,7 @@ export function validate (field: Field<any, any, any>, data: any): ConstraintsEr
   return null
 }
 
-export function validateAllConstraints<Prototype, Key extends keyof Prototype> (field: Field<any, Prototype[Key], Key>, data: Prototype[Key]): ConstraintsErrorPayload<Key>[] {
+export function validateAllConstraints<Key> (field: Field<any, any, Key>, data: any): ConstraintsErrorPayload<Key>[] {
   const payloads: ConstraintsErrorPayload<Key>[] = []
   for (let constraint of field.constraints) {
     const error = constraint.validate(data, field.ui)

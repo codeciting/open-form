@@ -1,5 +1,6 @@
-import Field, { InitialValue } from './field'
-import Constraints from './constraints'
+import Field, { InitialValue, validate, validateAllConstraints } from './field'
+import Constraints, { ConstraintsErrorPayload } from './constraints'
+import field from './field'
 
 export default class Model<UiConfig, Prototype> {
   readonly name: string
@@ -73,6 +74,17 @@ export class ModelFormCoordinator<UiConfig, Prototype> extends ModelCoordinator<
       }))
     }
     return Object.freeze(sections)
+  }
+
+  /**
+   * Make errors map for validating
+   */
+  makeErrorsMap (): Record<keyof Prototype, ConstraintsErrorPayload<keyof Prototype> | null> {
+    const map = {} as Record<keyof Prototype, ConstraintsErrorPayload<keyof Prototype>>
+    for (let field of this.model.fields) {
+      map[field.name] = null
+    }
+    return Object.seal(map)
   }
 }
 
